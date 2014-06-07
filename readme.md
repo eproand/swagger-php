@@ -36,3 +36,5 @@ Features
   * https://github.com/outeredge/SwaggerModule a ZF2 Module implementing swagger-php
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/zircote/swagger-php/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
+Maintained by eproand.
