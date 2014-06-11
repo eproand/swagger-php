@@ -176,7 +176,7 @@ class Parser
         $token = $tokenParser->next(false);
         $namespace = '';
         $imports = array(
-            'swg' => 'Swagger\Annotations' // Use @SWG\* for swagger annotations (unless overwrittemn by a use statement)
+            'swg' => 'Swagger\Annotations' // Use @SWG\* for swagger annotations (unless overwritten by a use statement)
         );
         $this->docParser->setImports($imports);
         $uses = array();
@@ -329,6 +329,11 @@ class Parser
         }
 
         foreach ($annotations as $annotation) {
+			//Ensure that only Swagger annotations are processed
+			if(!($annotation instanceof \Swagger\Annotations\AbstractAnnotation)) {
+				continue;
+			}
+
             foreach ($this->processors as $processor) {
                 $processor->process($annotation, $context);
             }
